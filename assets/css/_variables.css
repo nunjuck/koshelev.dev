@@ -1,0 +1,11 @@
+:root {
+  /* Colors */
+  --link-color: #336fee;
+  --text-color: #333;
+  --text-light-color: #4e4e4e;
+  --danger-color: #ae544e;
+  --access-color: #7eae4e;
+
+  /* Fonts */
+  --font-size-base: 16px;
+}
