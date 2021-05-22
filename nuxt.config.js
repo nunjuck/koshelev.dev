@@ -55,7 +55,7 @@ export default {
         'postcss-nested': {},
       },
       autoprefixer: {
-        browsers: ['last 3 versions'],
+        browsers: ['last 2 version', 'not dead', 'not ie <= 11'],
       },
     },
   },
