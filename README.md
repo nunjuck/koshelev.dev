@@ -18,3 +18,19 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Example test
+
+Filename `Logo.spec.js`
+
+```code
+import { mount } from '@vue/test-utils'
+import Logo from '@/components/Logo.vue'
+
+describe('Logo', () => {
+  test('is a Vue instance', () => {
+    const wrapper = mount(Logo)
+    expect(wrapper.vm).toBeTruthy()
+  })
+})
+```
