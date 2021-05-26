@@ -13,7 +13,7 @@
           </picture>
           <div class="person-self__info">
             <div class="person-self__name">Никита Кошелев</div>
-            <span class="person-self__signature">Переменная подпись</span>
+            <span class="person-self__signature">Моя библеотека книг 📚</span>
           </div>
         </div>
       </div>
@@ -23,11 +23,6 @@
 </template>
 
 <style lang="postcss">
-.container {
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
 .header {
   padding-top: 1.875rem;
 }
