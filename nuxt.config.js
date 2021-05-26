@@ -51,8 +51,11 @@ export default {
   build: {
     postcss: {
       plugins: {
-        'postcss-import': true,
+        'postcss-import': {},
         'postcss-nested': {},
+        'postcss-custom-media': {
+          importFrom: ['assets/css/media.css'],
+        },
       },
       autoprefixer: {
         browsers: ['last 2 version', 'not dead', 'not ie <= 11'],
