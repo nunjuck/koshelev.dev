@@ -39,19 +39,34 @@
 
 .person-self__avatar {
   margin-right: 1rem;
+  width: 40px;
+  height: 40px;
+
+  @media (--screen-md) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .person-self__name {
-  font-size: 1.375rem;
   font-weight: 500;
+  font-size: var(--font-size-base);
   line-height: 1.3;
+
+  @media (--screen-md) {
+    font-size: 1.375rem;
+  }
 }
 
 .person-self__signature {
-  font-size: 1.25rem;
   color: var(--text-light-color);
   line-height: 1.2;
   margin-top: 0.438rem;
   display: inline-block;
+  font-size: 0.875rem;
+
+  @media (--screen-md) {
+    font-size: 1.25rem;
+  }
 }
 </style>
