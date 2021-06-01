@@ -1,54 +1,59 @@
 <template>
-  <header class="header">
-    <div class="person-self">
-      <picture>
-        <img
-          class="person-self__avatar avatar"
-          src="~/assets/images/my-avatar/my-avatar.jpg"
-          srcset="~/assets/images/my-avatar/my-avatar@2x.jpg 2x"
-          alt="Фото Никиты Кошелева"
-        />
-      </picture>
-      <div class="person-self__info">
-        <div class="person-self__name">Никита Кошелев</div>
-        <span class="person-self__signature">Моя библеотека книг 📚</span>
+  <div class="container">
+    <header class="header">
+      <div class="person-self">
+        <picture>
+          <img
+            class="person-self__avatar avatar"
+            src="~/assets/images/my-avatar/my-avatar.jpg"
+            srcset="~/assets/images/my-avatar/my-avatar@2x.jpg 2x"
+            alt="Фото Никиты Кошелева"
+          />
+        </picture>
+        <div class="person-self__info">
+          <div class="person-self__name">Никита Кошелев</div>
+          <span class="person-self__signature">Моя библеотека книг 📚</span>
+        </div>
       </div>
-    </div>
-    <nav
-      class="main-nav"
-      aria-label="Главная навигация по сайту"
-      role="navigation"
-    >
-      <ul class="main-nav__list">
-        <li
-          class="main-nav__item main-nav__item--dissabled"
-          aria-current="page"
-        >
-          <a href="#" class="main-nav__link">Обо мне</a>
-        </li>
-        <li class="main-nav__item">
-          <a href="#" class="main-nav__link">Проекты</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="contacts">
-      <ul class="contacts__list" aria-label="Список контактных данных">
-        <li class="contacts__item">
-          <a
-            href="https://github.com/nunjuck"
-            class="contacts__link"
-            target="_blank"
-            >Гитхаб</a
+      <nav
+        class="main-nav"
+        aria-label="Главная навигация по сайту"
+        role="navigation"
+      >
+        <ul class="main-nav__list">
+          <li
+            class="main-nav__item main-nav__item--dissabled"
+            aria-current="page"
           >
-        </li>
-        <li class="contacts__item">
-          <a href="https://t.me/nunjuck" class="contacts__link" target="_blank"
-            >Телеграм</a
-          >
-        </li>
-      </ul>
-    </div>
-  </header>
+            <a href="#" class="main-nav__link">Обо мне</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Проекты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="contacts">
+        <ul class="contacts__list" aria-label="Список контактных данных">
+          <li class="contacts__item">
+            <a
+              href="https://github.com/nunjuck"
+              class="contacts__link"
+              target="_blank"
+              >Гитхаб</a
+            >
+          </li>
+          <li class="contacts__item">
+            <a
+              href="https://t.me/nunjuck"
+              class="contacts__link"
+              target="_blank"
+              >Телеграм</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+  </div>
 </template>
 
 <style lang="postcss" scoped>
