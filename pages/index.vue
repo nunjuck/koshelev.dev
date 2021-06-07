@@ -3,7 +3,11 @@
 </template>
 
 <script>
+import TitlePage from '@/components/TitlePage.vue'
+
 export default {
+  name: 'Index',
+  components: { TitlePage },
   data() {
     return {
       title: 'Дам почитать, только тебе! 😉',
