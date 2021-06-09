@@ -35,10 +35,20 @@ export default {
 
 <style lang="postcss" scoped>
 .heading-page {
-  margin-top: 140px;
+  margin-top: 40px;
+  @media (--screen-md) {
+    margin-top: 140px;
+  }
 }
 .heading-page__title {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  line-height: 1.3;
+  @media (--screen-md) {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+}
+.heading-page__description {
   line-height: 1.5;
 }
 </style>
