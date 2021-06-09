@@ -1,5 +1,7 @@
 <template>
-  <TitlePage :title="title" :subtitle="subtitle" />
+  <div class="page">
+    <TitlePage :title="title" :subtitle="subtitle" />
+  </div>
 </template>
 
 <script>
