@@ -8,8 +8,9 @@
           :aria-expanded="mobileMenuIsShow"
           class="category-nav__mobile-button"
           @click="mobileMenuIsShow = !mobileMenuIsShow"
-          v-html="mobileMenuIsShow ? 'Скрыть категории' : 'Показать категории'"
-        ></button>
+        >
+          {{ mobileMenuIsShow ? 'Скрыть категории' : 'Показать категории' }}
+        </button>
         <ul v-show="mobileMenuIsShow" class="category-nav__list">
           <li
             v-for="category in categories"
@@ -53,6 +54,11 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.category-nav__mobile-button {
+  @media (--screen-lg) {
+    display: none;
+  }
+}
 .category-nav {
   margin-top: 6.25rem;
   position: relative;
@@ -61,6 +67,7 @@ export default {
   padding-left: 0;
   @media (--screen-lg) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: block !important;
   }
 }
 .category-nav__item {
