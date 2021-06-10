@@ -14,10 +14,10 @@
         <ul v-show="mobileMenuIsShow" class="category-nav__list">
           <li
             v-for="category in categories"
-            :key="category"
+            :key="category.id"
             class="category-nav__item"
           >
-            <a href="#" class="category-nav__link">{{ category }}</a>
+            <a href="#" class="category-nav__link">{{ category.name }}</a>
           </li>
         </ul>
       </div>
@@ -31,17 +31,18 @@ import TitlePage from '@/components/TitlePage.vue'
 export default {
   name: 'Index',
   components: { TitlePage },
+  async asyncData({ $axios }) {
+    const db = await $axios.$get(
+      'https://api.notion.com/v1/databases/c6baa094890c49d3ae3bfd3f209dc48d'
+    )
+    const categories = db.properties.Category.select.options
+    return { categories }
+  },
   data() {
     return {
       title: 'Дам почитать, только тебе! 😉',
       subtitle: 'Выбери книгу и напиши мне в <a href="#">Телеграм</a>',
-      categories: [
-        'Маркетинг',
-        'Дизайн',
-        'Программирование',
-        'Бизнес',
-        'Психология',
-      ],
+      categories: {},
       mobileMenuIsShow: false,
     }
   },

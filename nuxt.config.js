@@ -46,7 +46,15 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:3000',
+    https: true,
+    headers: {
+      Authorization:
+        'Bearer secret_SAkBo7IMfSrhnGswb14N87cpXY3KuYkK4qdgg9VwMjd',
+      'Notion-Version': '2021-05-13',
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
