@@ -47,11 +47,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:3000',
-    https: true,
     headers: {
-      Authorization:
-        'Bearer secret_SAkBo7IMfSrhnGswb14N87cpXY3KuYkK4qdgg9VwMjd',
+      Authorization: `Bearer ${process.env.NOTION_TOKEN}`,
       'Notion-Version': '2021-05-13',
     },
   },

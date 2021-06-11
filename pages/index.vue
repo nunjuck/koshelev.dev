@@ -33,7 +33,7 @@ export default {
   components: { TitlePage },
   async asyncData({ $axios }) {
     const db = await $axios.$get(
-      'https://api.notion.com/v1/databases/c6baa094890c49d3ae3bfd3f209dc48d'
+      `https://api.notion.com/v1/databases/${process.env.DATA_BASE}`
     )
     const categories = db.properties.Category.select.options
     return { categories }
