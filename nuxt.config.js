@@ -50,6 +50,7 @@ export default {
     headers: {
       Authorization: `Bearer ${process.env.NOTION_TOKEN}`,
       'Notion-Version': '2021-05-13',
+      'Content-Type': 'Content-Type: application/json',
     },
   },
 
