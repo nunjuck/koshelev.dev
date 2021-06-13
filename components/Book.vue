@@ -12,7 +12,11 @@
     >
       {{ vailability ? 'Доступна' : 'Занята' }}
     </span>
-    <button class="book-card__copy" type="button" @click="copySign">
+    <button
+      class="book-card__copy"
+      type="button"
+      @click="copySign(name, $event)"
+    >
       Скопировать название
     </button>
   </article>
@@ -36,8 +40,23 @@ export default {
     },
   },
   methods: {
-    copySign() {
-      navigator.clipboard.writeText(this.$refs.foo.$el.outerHTML)
+    copySign(data, event) {
+      const th = event.target
+      const name = th.innerText
+      navigator.clipboard
+        .writeText(data)
+        .then(() => {
+          th.innerText = 'Скопировано'
+          setTimeout(() => {
+            th.innerText = name
+          }, 2000)
+        })
+        .catch((error) => {
+          console.error(
+            'При копировании произошла ошибка. Обновите страницу или скопируйте вручную',
+            error
+          )
+        })
     },
   },
 }
@@ -47,6 +66,13 @@ export default {
 .book-card {
   position: relative;
   padding-bottom: 2rem;
+  max-width: 320px;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+    @media (--screen-sm) {
+      margin-bottom: 0;
+    }
+  }
 }
 .book-card__cover {
   img {
