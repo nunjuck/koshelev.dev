@@ -19,8 +19,8 @@
           >
             <a
               href="#"
-              @click="flterCategory(books, category.id)"
               class="category-nav__link"
+              @click="flterCategory(books, category.id)"
               >{{ category.name }}</a
             >
           </li>
