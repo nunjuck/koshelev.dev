@@ -31,6 +31,7 @@
           v-for="book in booksIsFiltered.length !== 0 ? booksIsFiltered : books"
           :key="book.id"
           :name="book.properties.Name.title[0].plain_text"
+          :cover="book.properties.Cover.files[0].name"
           :vailability="book.properties.Available.checkbox"
         />
       </section>
@@ -150,6 +151,7 @@ export default {
   }
 }
 .books {
+  padding-bottom: 3rem;
   @media (--screen-sm) {
     grid-gap: 30px;
     display: grid;

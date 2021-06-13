@@ -1,7 +1,7 @@
 <template>
   <article class="book-card">
     <div class="book-card__cover">
-      <img src="~/assets/images/mooks/book.jpg" alt="Book" />
+      <img :src="getImage(cover)" :alt="name" width="100%" />
     </div>
     <h3 class="book-card__name" title="Чистая архитектура">
       {{ name }}
@@ -38,8 +38,17 @@ export default {
         return false
       },
     },
+    cover: {
+      type: String,
+      default() {
+        return 'no-cover'
+      },
+    },
   },
   methods: {
+    getImage(image) {
+      return require(`../assets/images/book-covers/${image}`)
+    },
     copySign(data, event) {
       const th = event.target
       const name = th.innerText
@@ -74,10 +83,9 @@ export default {
     }
   }
 }
+
 .book-card__cover {
-  img {
-    width: 100%;
-  }
+  border: 1px solid #f2f2f2;
 }
 
 .book-card__name {
@@ -107,5 +115,9 @@ export default {
   position: absolute;
   bottom: 0;
   cursor: pointer;
+  @media (--screen-md) {
+    font-size: 0.875rem;
+    text-align: left;
+  }
 }
 </style>
