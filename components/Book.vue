@@ -46,9 +46,6 @@ export default {
     },
   },
   methods: {
-    getImage(image) {
-      return require(`../assets/images/book-covers/${image}`)
-    },
     copySign(data, event) {
       const th = event.target
       const name = th.innerText
