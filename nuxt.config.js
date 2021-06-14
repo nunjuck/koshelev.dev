@@ -36,6 +36,7 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxt/postcss8',
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,7 +54,17 @@ export default {
       'Content-Type': 'Content-Type: application/json',
     },
   },
-
+  image: {
+    dir: 'assets/images',
+    presets: {
+      cover: {
+        modifiers: {
+          fit: 'cover',
+          format: 'jpg',
+        },
+      },
+    },
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {

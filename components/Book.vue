@@ -1,7 +1,7 @@
 <template>
   <article class="book-card">
     <div class="book-card__cover">
-      <img :src="getImage(cover)" :alt="name" width="100%" />
+      <nuxt-img preset="cover" :src="'/book-covers/' + cover" :alt="name" />
     </div>
     <h3 class="book-card__name" title="Чистая архитектура">
       {{ name }}
@@ -61,6 +61,7 @@ export default {
           }, 2000)
         })
         .catch((error) => {
+          // eslint-disable-next-line no-console
           console.error(
             'При копировании произошла ошибка. Обновите страницу или скопируйте вручную',
             error
@@ -86,6 +87,9 @@ export default {
 
 .book-card__cover {
   border: 1px solid #f2f2f2;
+  img {
+    width: 100%;
+  }
 }
 
 .book-card__name {
