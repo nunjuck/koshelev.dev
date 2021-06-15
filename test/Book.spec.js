@@ -6,6 +6,7 @@ describe('Index Page', () => {
     const wrapper = shallowMount(Book, {
       stubs: {
         'nuxt-img': true,
+        NuxtLink: true,
       },
     })
     expect(wrapper.vm).toBeTruthy()

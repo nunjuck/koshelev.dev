@@ -21,15 +21,12 @@
         role="navigation"
       >
         <ul class="main-nav__list">
-          <li
-            class="main-nav__item main-nav__item--dissabled"
-            aria-current="page"
-          >
-            <a href="#" class="main-nav__link">Обо мне</a>
+          <li class="main-nav__item" aria-current="page">
+            <NuxtLink to="/" class="main-nav__link">Обо мне</NuxtLink>
           </li>
-          <li class="main-nav__item">
+          <!-- <li class="main-nav__item">
             <a href="#" class="main-nav__link">Проекты</a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <div class="contacts">

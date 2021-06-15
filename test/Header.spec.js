@@ -3,7 +3,11 @@ import Header from '@/components/Header.vue'
 
 describe('Header', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Header)
+    const wrapper = mount(Header, {
+      stubs: {
+        NuxtLink: true,
+      },
+    })
     expect(wrapper.vm).toBeTruthy()
   })
 })
