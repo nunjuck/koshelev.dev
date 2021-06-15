@@ -44,14 +44,23 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    '@nuxtjs/proxy',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
+    proxy: true,
     headers: {
       Authorization: `Bearer ${process.env.NOTION_TOKEN}`,
       'Notion-Version': '2021-05-13',
       'Content-Type': 'Content-Type: application/json',
+    },
+  },
+  proxy: {
+    '/api/': {
+      target: 'https://api.notion.com/',
+      pathRewrite: { '^/api/': '' },
+      changeOrigin: true,
     },
   },
   image: {

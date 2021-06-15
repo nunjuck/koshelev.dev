@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/proxy": "^2.1.0",
     "core-js": "^3.9.1",
     "css-loader": "^5.2.5",
     "normalize.css": "^8.0.1",
