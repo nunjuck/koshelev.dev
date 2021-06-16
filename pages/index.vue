@@ -36,3 +36,12 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.projects {
+  margin-top: 2rem;
+  @media (--screen-md) {
+    margin-top: 4rem;
+  }
+}
+</style>
