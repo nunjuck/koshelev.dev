@@ -60,7 +60,7 @@ export default {
   computed: mapGetters(['getBooks', 'getCategories']),
   async mounted() {
     await this.$store.dispatch('fetchBooks')
-    this.$store.dispatch('fetchCategories')
+    this.$store.dispatch('filterCategories')
   },
 }
 </script>

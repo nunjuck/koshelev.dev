@@ -33,14 +33,22 @@ const store = () => {
         const books = result.results
         commit('setBooks', books)
       },
-      fetchCategories({ commit, getters }) {
+      filterCategories({ commit, getters }) {
         const books = getters.getBooks
-        const categories = []
 
-        books.forEach((element) => {
-          categories.push(element.properties.Category.select)
+        const categories = books.map((elementBook) => {
+          return elementBook.properties.Category.select
         })
-        commit('setCategories', categories)
+
+        const filteredCategories = categories.filter((category, index) => {
+          return (
+            index ===
+            categories.findIndex((obj) => {
+              return JSON.stringify(obj) === JSON.stringify(category)
+            })
+          )
+        })
+        commit('setCategories', filteredCategories)
       },
     },
     mutations: {
