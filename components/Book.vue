@@ -1,7 +1,12 @@
 <template>
   <article class="book-card">
     <div class="book-card__cover">
-      <nuxt-img preset="cover" :src="'/book-covers/' + cover" :alt="name" />
+      <nuxt-img
+        format="webp"
+        preset="cover"
+        :src="'/book-covers/' + cover"
+        :alt="name"
+      />
     </div>
     <h3 class="book-card__name" title="Чистая архитектура">
       {{ name }}
@@ -84,6 +89,7 @@ export default {
 
 .book-card__cover {
   border: 1px solid #f2f2f2;
+  display: flex;
   img {
     width: 100%;
   }
