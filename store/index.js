@@ -33,7 +33,7 @@ const store = () => {
         const books = result.results
         commit('setBooks', books)
       },
-      filterCategories({ commit, getters }) {
+      filterCategories({ commit, getters }, data) {
         const books = getters.getBooks
 
         const categories = books.map((elementBook) => {

@@ -17,13 +17,28 @@
             :key="category.id"
             class="category-nav__item"
           >
-            <a href="#" class="category-nav__link">{{ category.name }}</a>
+            <button
+              type="button"
+              class="category-nav__btn"
+              @click="activeCategory($event), filterBooks(category.name)"
+            >
+              {{ category.name }}
+            </button>
+          </li>
+          <li class="category-nav__item">
+            <button
+              type="button"
+              class="category-nav__btn"
+              @click="showAllBooks(), activeCategory($event)"
+            >
+              Показать все
+            </button>
           </li>
         </ul>
       </div>
       <section class="books">
         <Book
-          v-for="book in getBooks"
+          v-for="book in booksFiltered.length === 0 ? getBooks : booksFiltered"
           :key="book.id"
           :name="book.properties.Name.title[0].plain_text"
           :cover="book.properties.Cover.files[0].name"
@@ -31,7 +46,6 @@
         />
       </section>
     </div>
-    <!-- <pre>{{ books }}</pre> -->
   </div>
 </template>
 
@@ -49,7 +63,7 @@ export default {
       title: 'Дам почитать, только тебе! 😉',
       subtitle: 'Выбери книгу и напиши мне в <a href="#">Телеграм</a>',
       mobileMenuIsShow: false,
-      booksIsFiltered: [],
+      booksFiltered: [],
     }
   },
   head() {
@@ -61,6 +75,27 @@ export default {
   async mounted() {
     await this.$store.dispatch('fetchBooks')
     this.$store.dispatch('filterCategories')
+  },
+  methods: {
+    activeCategory(event) {
+      const target = event.target
+      const parentItem = target.parentNode
+      const allItems = document.querySelectorAll('.category-nav__item')
+
+      allItems.forEach((item) => {
+        item.classList.remove('category-nav__item--active')
+      })
+      parentItem.classList.add('category-nav__item--active')
+    },
+    filterBooks(category) {
+      const filteredCategory = this.getBooks.filter((element) => {
+        return element.properties.Category.select.name === category
+      })
+      this.booksFiltered = filteredCategory
+    },
+    showAllBooks() {
+      this.booksFiltered.splice(0, this.booksFiltered.length)
+    },
   },
 }
 </script>
@@ -103,12 +138,17 @@ export default {
     opacity: 1;
   }
 }
-.category-nav__link {
+.category-nav__btn {
   color: var(--nav-color);
   opacity: 0.54;
+  border: 0;
+  background-color: transparent;
   text-decoration: none;
   font-size: 1.125rem;
   transition: opacity 0.15s ease;
+  &:hover {
+    cursor: pointer;
+  }
   &:hover,
   &:focus {
     opacity: 0.7;
