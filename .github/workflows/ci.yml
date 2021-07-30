@@ -45,7 +45,7 @@ jobs:
         run: npm run test
   build:
     needs: setup
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Run build task
