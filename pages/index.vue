@@ -2,7 +2,7 @@
   <div class="page">
     <TitlePage :title="title" :subtitle="subtitle" />
     <div class="container">
-      <section class="projects">
+      <!-- <section class="projects">
         <h2>Мои проекты:</h2>
         <ul class="projects__list">
           <li class="projects__item">
@@ -11,7 +11,7 @@
             </NuxtLink>
           </li>
         </ul>
-      </section>
+      </section> -->
     </div>
   </div>
 </template>

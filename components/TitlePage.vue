@@ -50,5 +50,7 @@ export default {
 }
 .heading-page__description {
   line-height: 1.5;
+  font-size: 17px;
+  color: var(--text-color);
 }
 </style>

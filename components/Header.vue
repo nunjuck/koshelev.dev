@@ -12,10 +12,10 @@
         </picture>
         <div class="person-self__info">
           <div class="person-self__name">Никита Кошелев</div>
-          <span class="person-self__signature">Моя библеотека книг 📚</span>
+          <span class="person-self__signature">Фронтенд разработчик</span>
         </div>
       </div>
-      <nav
+      <!-- <nav
         class="main-nav"
         aria-label="Главная навигация по сайту"
         role="navigation"
@@ -24,11 +24,11 @@
           <li class="main-nav__item" aria-current="page">
             <NuxtLink to="/" class="main-nav__link">Обо мне</NuxtLink>
           </li>
-          <!-- <li class="main-nav__item">
+          <li class="main-nav__item">
             <a href="#" class="main-nav__link">Проекты</a>
-          </li> -->
+          </li>
         </ul>
-      </nav>
+      </nav> -->
       <div class="contacts">
         <ul class="contacts__list" aria-label="Список контактных данных">
           <li class="contacts__item">
@@ -142,6 +142,7 @@
     height: var(--size);
     background-color: #c4c4c4;
     border-radius: 50%;
+    display: none;
   }
 }
 
