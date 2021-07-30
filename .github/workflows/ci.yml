@@ -43,10 +43,6 @@ jobs:
 
       - name: Run tests 🧪
         run: npm run test
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
 
-    steps:
       - name: Run build task
         run: npm run generate
