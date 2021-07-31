@@ -38,12 +38,6 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
 
-      - name: Run linter 👀
-        run: npm run lint
-
-      - name: Run tests 🧪
-        run: npm run test
-
       - name: Run build task
         run: npm run generate
 
