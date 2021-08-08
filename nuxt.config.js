@@ -51,7 +51,7 @@ export default {
   axios: {
     proxy: true,
     headers: {
-      Authorization: `Bearer ${process.env.NOTION_TOKEN}`,
+      Authorization: `Bearer secret_SAkBo7IMfSrhnGswb14N87cpXY3KuYkK4qdgg9VwMjd`,
       'Notion-Version': '2021-05-13',
       'Content-Type': 'Content-Type: application/json',
     },

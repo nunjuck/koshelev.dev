@@ -20,7 +20,7 @@ const store = () => {
     actions: {
       async fetchBooks({ commit }) {
         const result = await this.$axios.$post(
-          `api/v1/databases/${process.env.DATA_BASE}/query`,
+          'api/v1/databases/c6baa094890c49d3ae3bfd3f209dc48d/query',
           {
             filter: {
               property: 'name',
