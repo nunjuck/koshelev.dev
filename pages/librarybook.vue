@@ -60,8 +60,9 @@ export default {
   components: { TitlePage, Book },
   data() {
     return {
-      title: 'Дам почитать, только тебе! 😉',
-      subtitle: 'Выбери книгу и напиши мне в <a href="#">Телеграм</a>',
+      title: 'Моя библиотека книг',
+      subtitle:
+        'Выбери книгу и напиши мне в <a href="https://t.me/nunjuck">Телеграм</a>',
       mobileMenuIsShow: false,
       booksFiltered: [],
     }
@@ -133,7 +134,9 @@ export default {
   }
 }
 .category-nav__item--active {
-  border-bottom: 1px solid #000;
+  @media (--screen-lg) {
+    border-bottom: 1px solid #000;
+  }
   a {
     opacity: 1;
   }
