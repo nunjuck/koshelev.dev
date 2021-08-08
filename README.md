@@ -1,6 +1,8 @@
 # koshelev.dev
 
-[![CI](https://github.com/nunjuck/koshelev.dev/workflows/ci/badge.svg)](https://github.com/nunjuck/koshelev.dev/actions?query=workflow%ci)
+[![ds](https://github.com/nunjuck/koshelev.dev/workflows/Deploy/badge.svg)](https://github.com/nunjuck/koshelev.dev/actions?query=workflow%3ADeploy)
+[![ds](https://github.com/nunjuck/koshelev.dev/workflows/Test/badge.svg)](https://github.com/nunjuck/koshelev.dev/actions?query=workflow%3ATest)
+
 
 ## Build Setup
 
