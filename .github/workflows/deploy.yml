@@ -12,8 +12,8 @@ jobs:
   setup:
     runs-on: ${{ matrix.os }}
     env:
-      NOTION_TOKEN: secret_SAkBo7IMfSrhnGswb14N87cpXY3KuYkK4qdgg9VwMjd
-      DATA_BASE: c6baa094890c49d3ae3bfd3f209dc48d
+      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      DATA_BASE: ${{ secrets.NOTION_DB }}
 
     strategy:
       matrix:
